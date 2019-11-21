@@ -3,11 +3,16 @@ import background from "../assets/background.png";
 import { 
   PlaneObj,
   BallonObj,
-  UpperBar,
   SphinxObj,
   BottomDesert,
   soundEnviroment,
+  PyramidObj,
+  ThreepyramidObj,
 } from './elements'
+import { 
+  UpperBar,
+} from '../general'
+
 
 class Main extends Component{
   audio = new Audio(soundEnviroment);
@@ -22,7 +27,9 @@ class Main extends Component{
         <PlaneObj />
         <BallonObj />
         <BottomDesert />
-        <SphinxObj />
+        <PyramidObj />
+        <ThreepyramidObj />
+        <SphinxObj />        
       </div>      
     </Fragment>
     );

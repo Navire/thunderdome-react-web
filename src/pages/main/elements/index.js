@@ -2,9 +2,10 @@ import PlaneObj from "./planeObj";
 import UpperBar from "./upperBar";
 import BottomDesert from "./bottomDesert";
 import soundEnviroment from '../../assets/enviroment.wav'
-import PLaneObj from "./planeObj";
+import PyramidObj from "./pyramidObj";
 import BallonObj from "./ballonObj";
 import SphinxObj from "./sphinxObj";
+import ThreepyramidObj from "./threePyramidObj";
 
 export {
     SphinxObj,
@@ -13,4 +14,6 @@ export {
     soundEnviroment,
     UpperBar,
     BottomDesert,
+    PyramidObj,
+    ThreepyramidObj
 }

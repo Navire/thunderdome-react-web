@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 
 import Main from "../pages/main/Main";
-import Profile from "../pages/profile/Profile";
+import Activity from "../pages/activity/";
 
 import history from "./history";
 
@@ -11,7 +11,7 @@ const Routes = () => (
   <ConnectedRouter history={history}>
     <Switch>      
       <Route exact path="/" component={Main} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/activity" component={Activity} />
     </Switch>
   </ConnectedRouter>
 );
