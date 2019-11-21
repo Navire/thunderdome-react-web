@@ -3,7 +3,7 @@ import threePyramidObj from "../../assets/threepyramid.png";
 
 const ThreePyramidObj = (props) => {    
     return(
-        <img src={threePyramidObj} style={style.img} />
+        <img alt="threePyramidObj" src={threePyramidObj} style={style.img} />
     );
 }
 

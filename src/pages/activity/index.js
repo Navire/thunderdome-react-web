@@ -2,23 +2,35 @@ import React, {Fragment, Component} from "react";
 import background from "../assets/background.png";
 import { 
   soundActivity, 
+  whatstask,
   SquareTasks,
 } from './elements'
 import { 
     UpperBar,
+    BackBt,
+    InfoBt,
 } from '../general'
 
 class Main extends Component{
   audio = new Audio(soundActivity);
+  whatstask = new Audio(whatstask);
 
   render(){
     // this.audio.play();
+    // this.whatstask.play();
 
     return(
     <Fragment>      
       <div style={style.background}>
         <UpperBar>
-            <h1>Upper Bar</h1>
+          <BackBt 
+            top='10%'
+            left='1%'
+            href='/' />
+          <InfoBt 
+            top='10%'
+            right='2%'
+          />
         </UpperBar>
         <SquareTasks />
       </div>      

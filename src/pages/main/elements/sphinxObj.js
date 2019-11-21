@@ -3,16 +3,16 @@ import sphinx from "../../assets/sphinx.png";
 
 const SphinxObj = (props) => {    
     return(
-        <img src={sphinx} style={style.img} />
+        <img alt="sphinx" src={sphinx} style={style.img} />
     );
 }
 
 const style = {
     img:{    
         width: '20%',
-        position: 'relative',
+        position: 'absolute',
         top: '65%',
-        left: '60%',
+        left: '75%',
         transform: 'scaleX(-1)',
     }
 }  

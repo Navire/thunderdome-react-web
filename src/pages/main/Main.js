@@ -11,6 +11,7 @@ import {
 } from './elements'
 import { 
   UpperBar,
+  InfoBt,
 } from '../general'
 
 
@@ -23,7 +24,13 @@ class Main extends Component{
     return(
     <Fragment>      
       <div style={style.background}>
-        <UpperBar />
+        <UpperBar >
+          <InfoBt 
+            top='10%'
+            right='2%'
+          />
+          
+        </UpperBar>
         <PlaneObj />
         <BallonObj />
         <BottomDesert />

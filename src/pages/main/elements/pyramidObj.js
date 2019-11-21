@@ -3,7 +3,7 @@ import pyramid from "../../assets/pyramid.png";
 
 const PyramidObj = (props) => {    
     return(
-        <img src={pyramid} style={style.img} />
+        <img alt="pyramid" src={pyramid} style={style.img} />
     );
 }
 
