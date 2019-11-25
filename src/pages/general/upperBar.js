@@ -15,6 +15,7 @@ const style = {
     height: '8%',
     position: 'absolute',    
     backgroundColor: "#4c0000",
+    zIndex: 3,
   }
 }  
 

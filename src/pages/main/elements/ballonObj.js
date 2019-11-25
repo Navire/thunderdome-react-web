@@ -17,10 +17,12 @@ const keyFrame = keyframes`
     0% {
         top: 15%;
         left: 15%;
+        transform: rotate(20deg);
     }
     100% {
         top: 8%;
         left: 20%;
+        transform: rotate(-20deg);
     }  
 `;
 
@@ -33,8 +35,7 @@ const Div = styled.div`
 
 const style = {
     img:{    
-        width: '50%',                
-        transform: 'rotate(20deg)',
+        width: '50%',                        
     }
 }  
 

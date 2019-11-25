@@ -8,6 +8,7 @@ import {
   soundEnviroment,
   PyramidObj,
   ThreepyramidObj,
+  StarBg,
 } from './elements'
 import { 
   UpperBar,
@@ -18,8 +19,12 @@ import {
 class Main extends Component{
   audio = new Audio(soundEnviroment);
 
+  componentWillUnmount(){    
+    this.audio.pause();
+  }
+
   render(){
-    // this.audio.play();
+    this.audio.play();
 
     return(
     <Fragment>      
@@ -28,9 +33,9 @@ class Main extends Component{
           <InfoBt 
             top='10%'
             right='2%'
-          />
-          
+          />          
         </UpperBar>
+        <StarBg />
         <PlaneObj />
         <BallonObj />
         <BottomDesert />

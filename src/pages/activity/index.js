@@ -1,7 +1,6 @@
 import React, {Fragment, Component} from "react";
 import background from "../assets/background.png";
 import { 
-  soundActivity, 
   whatstask,
   SquareTasks,
 } from './elements'
@@ -12,12 +11,14 @@ import {
 } from '../general'
 
 class Main extends Component{
-  audio = new Audio(soundActivity);
-  whatstask = new Audio(whatstask);
+  whatstask = new Audio(whatstask);  
 
-  render(){
-    // this.audio.play();
-    // this.whatstask.play();
+  componentWillUnmount(){
+    this.whatstask.pause();    
+  }
+
+  render(){     
+     this.whatstask.play();     
 
     return(
     <Fragment>      
@@ -31,7 +32,7 @@ class Main extends Component{
             top='10%'
             right='2%'
           />
-        </UpperBar>
+        </UpperBar>        
         <SquareTasks />
       </div>      
     </Fragment>

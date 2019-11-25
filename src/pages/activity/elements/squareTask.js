@@ -16,19 +16,22 @@ class SquareTasks extends Component{
   wrongAnswer = () => {    
     this.wrongAudio.play();
   }
-  
 
   render(){
     return(
-      <Fragment>
+      <Fragment>   
+        <div style={style.title}> 
+          Qual a comparação completa entre os conjuntos?
+        </div>
+
         <div style={style.square1}>
             <Content001 />
         </div>
 
         <div style={style.square2}>
             <Content002 />
-        </div>
-
+        </div> 
+        
         <BlockBt onclick={() => this.correctAnswer()} value=">" bottom="5%" left="20%" />
         <BlockBt onclick={() => this.wrongAnswer()} value="=" bottom="5%" left="35%" />
         <BlockBt onclick={() => this.wrongAnswer()} value="!=" bottom="5%" left="50%" />
@@ -42,20 +45,27 @@ class SquareTasks extends Component{
 
 const style = {
   square1:{    
-    top: '15%',
+    top: '20%',
     left: '10%',
     width: '35%',
-    height: '60%',
+    height: '55%',
     position: 'absolute',    
     backgroundColor: "#dda821",
   },
   square2:{    
-    top: '15%',
+    top: '20%',
     left: '55%',
     width: '35%',
-    height: '60%',
+    height: '55%',
     position: 'absolute',    
     backgroundColor: "#dda821",
+  },
+  title:{
+    top: '10%',
+    left: '30%',
+    position: 'absolute',
+    fontSize: '4vh',
+    color: 'white',   
   }
 }  
 
