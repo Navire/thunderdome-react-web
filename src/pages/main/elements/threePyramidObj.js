@@ -11,7 +11,7 @@ const style = {
     img:{    
         width: '25%',
         position: 'absolute',
-        top: '65%',
+        top: '70%',
         left: '40%',
     }
 }  

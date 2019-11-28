@@ -23,9 +23,13 @@ class Main extends Component{
     this.audio.pause();
   }
 
-  render(){
+  componentDidMount(){    
     this.audio.play();
+  }
 
+  render(){    
+    this.audio.play();
+    
     return(
     <Fragment>      
       <div style={style.background}>

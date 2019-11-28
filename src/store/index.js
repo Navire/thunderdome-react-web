@@ -3,11 +3,11 @@ import { connectRouter, routerMiddleware } from "connected-react-router";
 import thunk from "redux-thunk";
 
 import history from "../routes/history";
-import activiteReducer from '../pages/activity/reducer'
+import activityReducer from '../pages/activity/reducer'
 
 
 const rootReducer = combineReducers({
-  activite: activiteReducer,
+  activity: activityReducer,
 });
 
 const middlewares = [

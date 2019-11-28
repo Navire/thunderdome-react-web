@@ -35,7 +35,7 @@ class SquareTasks extends Component{
         <BlockBt onclick={() => this.correctAnswer()} value=">" bottom="5%" left="20%" />
         <BlockBt onclick={() => this.wrongAnswer()} value="=" bottom="5%" left="35%" />
         <BlockBt onclick={() => this.wrongAnswer()} value="!=" bottom="5%" left="50%" />
-        <BlockBt onclick={() => this.wrongAnswer()} value="=" bottom="5%" left="65%" />
+        <BlockBt onclick={() => this.wrongAnswer()} value="<" bottom="5%" left="65%" />
       </Fragment>
     ); 
     } 

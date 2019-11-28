@@ -1,8 +1,12 @@
 import React, {Fragment, Component} from "react";
+import { connect } from "react-redux";
+import * as actions from "./actions";
 import background from "../assets/background.png";
 import { 
   whatstask,
   SquareTasks,
+  wrong,
+  correct,
 } from './elements'
 import { 
     UpperBar,
@@ -10,16 +14,70 @@ import {
     InfoBt,
 } from '../general'
 
-class Main extends Component{
+class Activity extends Component{  
   whatstask = new Audio(whatstask);  
+  correctAudio = new Audio(correct);
+  wrongAudio = new Audio(wrong);
 
-  componentWillUnmount(){
-    this.whatstask.pause();    
+  state = {
+    buffer: [],    
+    position: null,
+    firsttime: true,
+  };
+
+  checkBufferBlockTable = () => {
+    this.props.getBuffer();
+    const { buffer } = this.props;
+    const { position, firsttime }  = this.state;
+    
+    let correct = false;
+    let play = 0;
+    for(let i=0; i<16; i++){      
+      if(buffer[i] === 13){
+        play = buffer[i];
+        correct = true;
+        break;
+      }  
+      else if (buffer[i] !== 255) {        
+        play = buffer[i];
+        break;
+      } 
+    }
+
+    if (!firsttime) {
+      if (play !== position && play !== undefined){
+        ( correct ? this.correctAudio.play() : this.wrongAudio.play() );
+        
+        this.setState({
+          position: play,
+        });
+      }            
+    } else {
+      setTimeout( ()=> 
+        this.setState({          
+          firsttime: false,
+        })
+      ,4000)
+    }
+  }
+  
+  componentWillMount(){        
+    const intervalId = setInterval(()=> this.checkBufferBlockTable(), 1000);
+    this.setState({intervalId: intervalId});
   }
 
-  render(){     
-     this.whatstask.play();     
+  componentDidMount(){
+    this.whatstask.play();
+  }
 
+  componentWillUnmount(){
+    this.whatstask.pause();
+    this.correctAudio.pause();
+    this.wrongAudio.pause();
+    clearInterval(this.state.intervalId);
+  }
+
+  render(){          
     return(
     <Fragment>      
       <div style={style.background}>
@@ -55,4 +113,13 @@ const style = {
   }
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+  return{
+    ...state.activity,
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  actions
+)(Activity);
